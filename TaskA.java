@@ -1,3 +1,7 @@
+// Dale Peligro
+// CS2450
+// Assignment 1
+// 09/25/2025
 
 public class TaskA {
 
