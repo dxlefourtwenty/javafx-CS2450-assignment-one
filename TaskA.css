@@ -2,3 +2,50 @@
     -fx-background-color: rgb(225, 225, 225);
     background-color: rgba(225, 225, 225);
 }
+
+#show-total {
+    -fx-color: rgb(227, 149, 30);
+    color: rgb(227, 149, 30);
+    -fx-font-size: 14px;
+    font-size: 14px;
+    -fx-height: 25px;
+    height: 25px;
+    -fx-width: 55px;
+    width: 55px;
+    -fx-margin-top: 10px;
+    margin-top: 10px;
+    -fx-padding-top: 10px;
+    padding-top: 10px;
+    -fx-font-weight: bold;
+    font-weight: bold;
+}
+
+#total-label {
+    -fx-font-weight: bold;
+    font-weight: bold;
+    -fx-font-size: 16px;
+    font-size: 16px;
+}
+
+#trucks-list,
+#wheels-list,
+#decks-list,
+#misc-list {
+    -fx-border-color: rgb(53, 139, 209);
+    -fx-border-width: 2px;
+    -fx-border-radius: 4px;
+    -fx-font-size: 14px;
+    font-size: 14px;
+    border-color: rgb(53, 139, 209);
+    border-width: 2px;
+    border-radius: 4px;
+}
+
+.label {
+    -fx-font-size: 16px;
+    font-size: 16px;
+    -fx-font-weight: bold;
+    font-weight: bold;
+    -fx-text-align: center;
+    text-align: center;
+}
