@@ -4,12 +4,14 @@
 // 09/25/2025
 
 import javafx.application.Application;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -45,7 +47,7 @@ public class TaskA extends Application {
         Label decksLabel = new Label("Decks*");
         Label truckAssembliesLabel = new Label("Truck Assemblies*");
         Label wheelsLabel = new Label("Wheels*");
-        Label miscLabel = new Label("Miscellaneous");
+        Label miscLabel = new Label("Misc. (+CNTRL/CMD)");
         Label totalLabel = new Label("Total: N/A");
 
         VBox pageBody = new VBox();
@@ -81,6 +83,7 @@ public class TaskA extends Application {
         wheelsList.getItems().addAll(wheelOne, wheelTwo, wheelThree, wheelFour);
         ListView<skateboardProduct> miscList = new ListView<skateboardProduct>();
         miscList.getItems().addAll(gripTape, bearings, riserPads, nutsAndBolts);
+        miscList.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
         // Set the child elements for each parent
         pageBody.getChildren().add(0, menuLayout);
@@ -119,14 +122,19 @@ public class TaskA extends Application {
             skateboardProduct sel1 = decksList.getSelectionModel().getSelectedItem();
             skateboardProduct sel2 = trucksList.getSelectionModel().getSelectedItem();
             skateboardProduct sel3 = wheelsList.getSelectionModel().getSelectedItem();
-            skateboardProduct sel4 = miscList.getSelectionModel().getSelectedItem();
+            ObservableList<skateboardProduct> sel4 = miscList.getSelectionModel().getSelectedItems();
+            int sel4Price = 0;
 
             if (sel1 == null || sel2 == null || sel3 == null) {
                 totalLabel.setText("Error: Please select an option for the *required categories.");
                 totalLabel.setStyle("-fx-text-fill: red;");
             }
 
-            int sel4Price = (sel4 != null) ? sel4.getPrice() : 0;
+            if (!sel4.isEmpty()) {
+                for (skateboardProduct item : sel4) {
+                    sel4Price += item.getPrice();
+                }
+            }
 
             int subtotal = sel1.getPrice() + sel2.getPrice() + sel3.getPrice() + sel4Price;
             double tax = subtotal * 0.07;
