@@ -1,0 +1,35 @@
+* {
+    -fx-font-family: 'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#page-title {
+    -fx-font-size: 32px;
+    font-size: 32px;
+    -fx-font-weight: bold;
+    font-weight: bold;
+}
+
+#information-label {
+    -fx-font-size: 28px;
+    font-size: 28px;
+    -fx-font-weight: bold;
+    font-weight: bold;
+}
+
+.small-label {
+    -fx-font-size: 20px;
+    font-size: 20px;
+}
+
+.selections * {
+    -fx-font-size: 16px;
+    font-size: 16px;
+}
+
+#price-container {
+    -fx-font-size: 14px;
+    font-size: 14px;
+    -fx-font-weight: bold;
+    font-weight: bold;
+}
